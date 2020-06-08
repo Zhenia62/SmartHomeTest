@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+    box-shadow: none;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.table_content{
+    width: 100%;
+    padding: 15px;
+}
+
+.mat-row {
+    position: relative;
+    cursor: pointer;
+    padding: 8px;
+
+    .mat-cell {
+        min-width: 0;
+
+        &.mat-column-detail-button {
+            flex: 0 1 auto;
+            padding: 0 24px 0 0;
+        }
+    }
+}
+

@@ -1,0 +1,60 @@
+
+<div id="login" class="inner-scroll" fxLayout="row" fxLayoutAlign="start">
+
+    <div id="login-intro" fxFlex fxHide fxShow.gt-xs>
+
+        <div class="logo" [@animate]="{value:'*',params:{scale:'0.2'}}">
+            <img src="assets/images/logos/fuse.svg">
+        </div>
+
+        <div class="title" [@animate]="{value:'*',params:{delay:'50ms',y:'25px'}}">
+            Добро пожаловать в личный кабинет!
+        </div>
+
+        <div class="description" [@animate]="{value:'*',params:{delay:'100ms',y:'25px'}}">
+            Тут вы сможете управлять вашими устройствами. Отслеживать поступающие показания и многое другое...
+        </div>
+    </div>
+
+    <div id="login-form-wrapper" fusePerfectScrollbar
+         [@animate]="{value:'*',params:{delay:'300ms',x:'100%'}}">
+        <div id="login-form">
+            <div class="logo" fxHide.gt-xs>
+                <img src="assets/images/logos/fuse.svg">
+            </div>
+
+            <div class="title">Вход в личный кабинет</div>
+
+            <form name="loginForm" [formGroup]="loginForm" novalidate (ngSubmit)="onActive()">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Логин</mat-label>
+                    <input type="text" matInput formControlName="login">
+                    <mat-icon matSuffix class="secondary-text">person</mat-icon>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Пароль</mat-label>
+                    <input matInput type="password" formControlName="password">
+                    <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
+                    <mat-error>
+                        Требуется ввести пароль!
+                    </mat-error>
+                </mat-form-field>
+
+                <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column"
+                     fxLayoutAlign="space-between center">
+                    <!--<mat-checkbox class="remember-me" aria-label="Remember Me">
+                        Запомнить меня
+                    </mat-checkbox>-->
+                </div>
+
+                <button mat-raised-button color="accent" class="submit-button" aria-label="LOGIN"
+                        [disabled]="loginForm.invalid">
+                    Вход
+                </button>
+            </form>
+            </div>
+        </div>
+</div>

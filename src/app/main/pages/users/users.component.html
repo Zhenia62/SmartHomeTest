@@ -1,0 +1,11 @@
+<div class="main">
+    <app-user-list></app-user-list>
+</div>
+
+<button *ngIf="isAdmin()" mat-fab class="accent" id="add-contact-button" (click)="newContact()" aria-label="add contact">
+    <mat-icon>person_add</mat-icon>
+</button>
+
+
+
+
